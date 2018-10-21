@@ -144,7 +144,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\arc.cpp" />
+    <ClCompile Include="src\circle.cpp" />
+    <ClCompile Include="src\dot.cpp" />
+    <ClCompile Include="src\ellipse.cpp" />
+    <ClCompile Include="src\line.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\rectangle.cpp" />
+    <ClCompile Include="src\ShapePicker.cpp" />
+    <ClCompile Include="src\square.cpp" />
+    <ClCompile Include="src\triangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\arc.h" />
+    <ClInclude Include="include\circle.h" />
+    <ClInclude Include="include\dot.h" />
+    <ClInclude Include="include\ellipse.h" />
+    <ClInclude Include="include\line.h" />
+    <ClInclude Include="include\rectangle.h" />
+    <ClInclude Include="include\ShapePicker.h" />
+    <ClInclude Include="include\square.h" />
+    <ClInclude Include="include\triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

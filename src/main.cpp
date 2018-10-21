@@ -12,7 +12,6 @@
 *
 * Contains the entry point of the application 
 */
-
 #include "SFML/Graphics.hpp"
 
 int main() //!< Entry point for the application
@@ -33,7 +32,7 @@ int main() //!< Entry point for the application
 			}
 		}
 
-		window.clear();
+		window.clear(sf::Color::White);
 
 		// Do your drawing here
 
