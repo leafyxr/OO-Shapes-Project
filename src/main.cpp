@@ -13,6 +13,11 @@
 * Contains the entry point of the application 
 */
 #include "SFML/Graphics.hpp"
+#include "triangle.h"
+#include "square.h"
+#include "rectangle.h"
+#include "line.h"
+#include "dot.h"
 
 int main() //!< Entry point for the application
 {
@@ -20,6 +25,11 @@ int main() //!< Entry point for the application
 	window.setFramerateLimit(60);
 
 	// Instaniate any classes here
+	triangle Triangle(100,100,100,100);
+	square Square(250, 100, 100);
+	rectangle Rectangle(400, 100, 100, 50);
+	line Line(50, 250, 150, 250);
+	dot Dot(250, 250);
 
 	while (window.isOpen())
 	{
@@ -35,6 +45,20 @@ int main() //!< Entry point for the application
 		window.clear(sf::Color::White);
 
 		// Do your drawing here
+		Triangle.calculateVertices();
+		window.draw(Triangle);
+
+		Square.calculateVertices();
+		window.draw(Square);
+
+		Rectangle.calculateVertices();
+		window.draw(Rectangle);
+
+		Line.calculateVertices();
+		window.draw(Line);
+
+		Dot.calculateVertices();
+		window.draw(Dot);
 
 		window.display();
 	}
