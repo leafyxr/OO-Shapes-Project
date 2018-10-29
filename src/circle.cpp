@@ -1,13 +1,12 @@
 #include "..\include\circle.h"
+#include <cmath>;
 void circle::calculateVertices()
 {
-	va_Triangle = sf::VertexArray(sf::LineStrip, 4);
-	va_Triangle[0].position = sf::Vector2f(fXPos, (fYPos - (0.5 * fHeight)));
-	va_Triangle[1].position = sf::Vector2f((fXPos + (0.5 * fBase)), (fYPos + (0.5 * fHeight)));
-	va_Triangle[2].position = sf::Vector2f((fXPos - (0.5 * fBase)), (fYPos + (0.5 * fHeight)));
-	va_Triangle[3].position = sf::Vector2f(fXPos, (fYPos - (0.5 * fHeight)));
-	for (int i = 0; i < va_Triangle.getVertexCount(); i++) {
-		va_Triangle[i].color = sf::Color::Red;
+	va_Circle = sf::VertexArray(sf::LineStrip, iVertexCount);
+	for (int i = 0; i < va_Circle.getVertexCount(); i++) {
+		float fAngle = float((float)i / float(iVertexCount-1)) * 2 * float(atan(1) * 4);
+		va_Circle[i].position = sf::Vector2f((float)(fXPos + cosf(fAngle) * fRadius), (float)(fYPos + sinf(fAngle) * fRadius));
+		va_Circle[i].color = color;
 	}
 }
 
@@ -16,12 +15,12 @@ circle::circle()
 	calculateVertices();
 }
 
-circle::circle(float Xpos, float YPos, float Base, float Height)
+circle::circle(float Xpos, float YPos, float Radius, sf::Color NewColor)
 {
 	fXPos = Xpos;
 	fYPos = YPos;
-	fBase = Base;
-	fHeight = Height;
+	fRadius = Radius;
+	color = NewColor;
 	calculateVertices();
 }
 
@@ -31,5 +30,5 @@ circle::~circle()
 
 void circle::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target.draw(va_Triangle, states);
+	target.draw(va_Circle, states);
 }

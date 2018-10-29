@@ -9,7 +9,7 @@ void triangle::calculateVertices()
 	va_Triangle[2].position = sf::Vector2f((fXPos - (0.5 * fBase)), (fYPos + (0.5 * fHeight)));
 	va_Triangle[3].position = sf::Vector2f(fXPos, (fYPos - (0.5 * fHeight)));
 	for (int i = 0; i < va_Triangle.getVertexCount(); i++) {
-		va_Triangle[i].color = sf::Color::Red;
+		va_Triangle[i].color = color;
 	}
 }
 
@@ -18,12 +18,13 @@ triangle::triangle()
 	calculateVertices();
 }
 
-triangle::triangle(float Xpos, float YPos, float Base, float Height)
+triangle::triangle(float Xpos, float YPos, float Base, float Height, sf::Color NewColor)
 {
 	fXPos = Xpos;
 	fYPos = YPos;
 	fBase = Base;
 	fHeight = Height;
+	color = NewColor;
 	calculateVertices();
 }
 

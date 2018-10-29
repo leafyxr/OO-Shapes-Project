@@ -8,7 +8,7 @@ void rectangle::calculateVertices()
 	va_Rectangle[3].position = sf::Vector2f((fXPos - (0.5 * fBase)), (fYPos + (0.5 * fHeight)));
 	va_Rectangle[4].position = sf::Vector2f((fXPos - (0.5 * fBase)), (fYPos - (0.5 * fHeight)));
 	for (int i = 0; i < va_Rectangle.getVertexCount(); i++) {
-		va_Rectangle[i].color = sf::Color::Red;
+		va_Rectangle[i].color = color;
 	}
 }
 
@@ -17,12 +17,13 @@ rectangle::rectangle()
 	calculateVertices();
 }
 
-rectangle::rectangle(float Xpos, float YPos, float Base, float Height)
+rectangle::rectangle(float Xpos, float YPos, float Base, float Height, sf::Color NewColor)
 {
 	fXPos = Xpos;
 	fYPos = YPos;
 	fBase = Base;
 	fHeight = Height;
+	color = NewColor;
 	calculateVertices();
 }
 
