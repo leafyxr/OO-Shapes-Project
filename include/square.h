@@ -1,17 +1,21 @@
+/*! \class square.h
+* \brief Used to draw square Shapes
+*
+*/
 /*! \file square.h
-* Used to draw a square shape
-* Can set position, color and dimensions
+* \brief Header file for square Class
+*
 */
 #pragma once
 #include <SFML/Graphics.hpp>
 class square : public sf::Drawable
 {
 private:
-	sf::VertexArray va_Square;
-	float fXPos = 512;
-	float fYPos = 400;
-	float fLength = 50;
-	sf::Color color = sf::Color::Red;
+	sf::VertexArray va_Square;//!< Object to be drawn
+	float fXPos = 512;//!< X Position
+	float fYPos = 400;//!< Y Position
+	float fLength = 50;//!< length of the sides
+	sf::Color color = sf::Color::Red;//!< color of the object
 public:
 	//! Calculates and sets the position and color of each Vertex
 	void calculateVertices();
@@ -19,12 +23,14 @@ public:
 	square();
 	//! Constructs the object with set paramaters
 	/*!
-	\param Xpos X position.
-	\param Ypos Y position.
-	\param Lenght size of the Square.
+	\param XPos X position.
+	\param YPos Y position.
+	\param Length size of the Square.
 	\param NewColor Color of Shape.*/
-	square(float Xpos, float YPos, float Length, sf::Color NewColor);
+	square(float XPos, float YPos, float Length, sf::Color NewColor);
+	//! Deconstructor
 	~square();
+	//! Draws the Object
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

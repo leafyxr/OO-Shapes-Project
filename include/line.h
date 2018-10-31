@@ -1,19 +1,22 @@
+/*! \class line.h
+* \brief Used to draw lines
+*
+*/
 /*! \file line.h
-* Used to draw a line
-* Can set positions of two points and the color
+* \brief Header file for line Class
+*
 */
 #pragma once
 #include <SFML/Graphics.hpp>
 class line : public sf::Drawable
 {
-public:
 private:
-	sf::VertexArray va_Line;
-	float fXPosA = 512;
-	float fYPosA = 400;
-	float fXPosB = 512;
-	float fYPosB = 200;
-	sf::Color color = sf::Color::Red;
+	sf::VertexArray va_Line;//!< Object to be drawn
+	float fXPosA = 512;//!< X Position of point A
+	float fYPosA = 400;//!< Y Position of point A
+	float fXPosB = 512;//!< X Position of point B
+	float fYPosB = 200;//!< Y Position of Point B
+	sf::Color color = sf::Color::Red;//!< color of the object
 public:
 	//! Calculates and sets the position and color of each Vertex
 	void calculateVertices();
@@ -21,13 +24,15 @@ public:
 	line();
 	//! Constructs the object with set paramaters
 	/*!
-	\param XposA X position of point A.
-	\param YposA Y position of point A.
-	\param XposB X position of point B.
-	\param YposB Y position of point B.
+	\param XPosA X position of point A.
+	\param YPosA Y position of point A.
+	\param XPosB X position of point B.
+	\param YPosB Y position of point B.
 	\param NewColor Color of Shape.*/
-	line(float XposA, float YPosA, float XPosB, float YPosB, sf::Color NewColor);
+	line(float XPosA, float YPosA, float XPosB, float YPosB, sf::Color NewColor);
+	//! Deconstructor
 	~line();
+	//! Draws the Object
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

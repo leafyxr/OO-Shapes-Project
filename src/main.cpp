@@ -5,6 +5,9 @@
 * The classes and files you use are up to you.  
 *
 * This software froms the basis of your submission for lab book 1
+*
+* Written By James Sampson-Brindley - p17202338
+*
 */
 
 /*! \file main.cpp
@@ -21,8 +24,8 @@
 #include "circle.h"
 #include "ellipse.h"
 #include "arc.h" 
-
-int main() //!< Entry point for the application
+//! Entry point for the application
+int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1024, 800), "Lab Book 1 - Shapes");
 	window.setFramerateLimit(60);
@@ -53,27 +56,35 @@ int main() //!< Entry point for the application
 
 		// Do your drawing here
 
+		//Triangle
 		Triangle.calculateVertices();
 		window.draw(Triangle);
 
+		//Square
 		Square.calculateVertices();
 		window.draw(Square);
 
+		//Rectangle
 		Rectangle.calculateVertices();
 		window.draw(Rectangle);
-
+		
+		//Line
 		Line.calculateVertices();
 		window.draw(Line);
 
+		//Dot
 		Dot.calculateVertices();
 		window.draw(Dot);
 
+		//Circle
 		Circle.calculateVertices();
 		window.draw(Circle);
 
+		//Ellipse
 		Ellipse.calculateVertices();
 		window.draw(Ellipse);
 
+		//Arc
 		Arc.calculateVertices();
 		window.draw(Arc);
 
